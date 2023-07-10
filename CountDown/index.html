@@ -114,7 +114,7 @@
 
                 remainSec.innerText = Math.floor((remainingTime / s) % 60);
                 remainMin.innerText = Math.floor((remainingTime / m) % 60);
-                remainHrs.innerText = Math.floor((remainingTime / h) % 60);
+                remainHrs.innerText = Math.floor((remainingTime / h) % 24);
                 remainDays.innerText = Math.floor(remainingTime / d);
             })
         })
