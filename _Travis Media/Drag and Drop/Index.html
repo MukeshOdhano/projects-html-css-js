@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Drag | Drop</title>
+
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+      body{
+         width: 100vw;  
+         height: 100vh;
+         display: grid;
+         place-items: center;
+      }
+      .container{
+         padding: 10px;
+         width: 50vw;
+         height: 50vh;
+         box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+         gap: 10px;
+      }
+      .box{
+         width: 150px;
+         height: 150px;
+         border: 1px solid black;
+         border-radius: 12px;
+         overflow: hidden;
+      }
+      .fill {
+         background-image: url('https://images.unsplash.com/photo-1661956601031-4cf09efadfce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80');
+         width: 150px;
+         height: 150px;
+         background-size: cover;
+         background-position: center center;
+      }
+
+      .hoverd{
+         background-color: #f1f1f1;
+         background-size: 20px 20px;
+         background-position: center;
+         background-image: radial-gradient(circle, #232323 1px, transparent 2.5px);
+      }
+
+      @media (max-width: 800px) {
+         .container{
+            width: 40vw;
+            height: 100vh;
+         }
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <div id="box1" class="box">
+         <div class="fill" draggable="true"></div>
+      </div>
+      <div id="box2" class="box"></div>
+      <div id="box3" class="box"></div>
+      <div id="box4" class="box"></div>
+   </div>
+
+   <script>
+      const fill = document.querySelector(".fill");
+      const boxes = document.querySelectorAll('.box');
+
+      fill.addEventListener("dragstart", dragStart)
+      fill.addEventListener('dragend', dragEnd)
+
+      for(box of boxes){
+         box.addEventListener('dragover', dragOver)
+         box.addEventListener('dragover', dragEnd)
+         box.addEventListener('dragover', dragLeave)
+         box.addEventListener('dragover', drop)
+
+      }
+
+      function dragStart(){
+
+      }
+      function dragEnd(){
+         this.className = ' fill'
+      }
+
+      function dragOver(e){
+         e.preventDefault()
+      }
+      function dragEnter(e){
+         e.preventDefault()
+         this.className += ' hoverd'
+      }
+      function dragLeave(){
+         this.className = ' box'
+      }
+      function drop(){
+         this.className = "box"
+         this.append(fill)
+      }
+   </script>
+</body>
+</html>

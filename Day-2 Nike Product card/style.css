@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+
+   font-family: Quicksand, sans-serif;
+}
+
+html{
+   font-size: 62.5%;
+}
+.logo{
+   width: 8rem;
+   margin-top: 1.25rem;
+   
+}
+.shoe-1{
+   width: 30rem;
+
+   position: absolute;
+   top: 8.5rem;
+   right: -12rem;
+
+   transition: transform 1s ease-in;
+}
+.container.change .shoe-1{
+   transform: translateX(-90rem) rotateZ(45deg);
+}
+
+.shoe-2{
+   width: 30rem;
+   position: absolute;
+   top: 6rem;
+   right: -50rem;
+
+   transition: transform 1s ease-in;
+
+}
+.container.change .shoe-2{
+   transform: translateX(-40rem) rotateZ(-45deg);
+}
+
+.container{
+   background: #262626;
+   width: 100%;
+   height: 100vh;
+
+   display: grid;
+   place-items: center;
+}
+
+.card-wrapper{
+   width: 50rem;
+   height: 70rem;
+
+   padding: 0 10rem;
+   display: grid;
+   place-items: center;
+   overflow: hidden;
+}
+
+.card{
+   background-color: #eee;
+   width: 30rem;
+   height: 60rem;
+
+   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.7);
+   border-radius: 2rem;
+
+   position: relative;
+   top: 0;
+   left: 0;
+
+   transition: background .5s;
+}
+.container.change .card-top{
+   background-color: #7952B3;
+}
+
+
+.card-top{
+   background: #cfae19;
+   width: 80%;
+   height: 47%;
+
+   padding: 3rem;
+   margin-top: 0;
+
+   border-radius: 2rem 2rem 0 0;
+
+}
+
+.card-top-text{
+   color: white;
+}
+.card-top-text h1{
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: .1rem;
+
+   margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+.card-bottom{
+   width: 100%;
+   height: 50%;
+
+   padding: 2rem 3rem;
+
+}
+.card-bottom h1{
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: .1rem;
+
+   color: #333;
+
+   margin-bottom: .6rem;
+}
+
+.badge{
+   position: absolute;
+   top: 35rem;
+   right: 5rem;
+
+   background-color: #3AB4F2;
+   width: 3.5rem;
+   height: 1.5rem;
+
+   color: #ffffff;
+
+   text-align: center;
+
+   display: grid;
+   place-items: center;
+
+   border-radius: .3rem;
+
+   font-size: 1rem;
+   font-weight: bold;
+   letter-spacing: .1rem;
+   text-transform: uppercase;
+}
+
+.card-bottom h3{
+   font-size: 1rem;
+   font-weight: 400;
+   text-transform: uppercase;
+
+   margin-bottom: .5rem;
+}
+
+.stars{
+   margin-bottom: 1.5rem;
+}
+.stars i:last-child{
+   
+   background: linear-gradient(to right, #000000 55%, #0000007c 50%);
+   -webkit-text-fill-color: transparent;
+   -webkit-background-clip: text;
+}
+
+.size{
+   margin-bottom: 1rem;
+}
+.size h4{
+   font-size: 1.5rem;
+   text-transform: uppercase;
+   margin-bottom: .5rem;
+   letter-spacing: .1rem;
+}
+.sizes{
+   display: flex;
+}
+.sizes span{
+   font-size: 1.3rem;
+   margin-right: 2rem
+}
+.sizes span:nth-child(2){
+   background-color: #3AB4F2;
+   width: 2rem;
+   height: 2rem;
+   border-radius: 50%;
+   
+   display: grid;
+   place-items: center;
+   color: white;
+}
+
+.color h4{
+   font-size: 1.5rem;
+   text-transform: uppercase;
+   margin-bottom: 1rem;
+}
+.colors{
+   display: flex;
+}
+.color-1,
+.color-2{
+   background-color: #cfae19;
+   width: 2rem;
+   height: 2rem;
+   border-radius: 50%;
+
+   cursor: pointer;
+   margin-bottom: 1.5rem;;
+}
+
+.color-1{
+   background-color: #cfae19;
+   margin-right: 1rem;
+   box-shadow: 0 1rem 3rem rgba(28, 71, 122, 0.2);
+}
+.color-2{
+   background-color: #7952B3;
+   box-shadow: 0 .3rem 2px rgba(102, 122, 28, 0.2);
+}
+
+.price{
+   width: 16rem;
+   height: 4rem;
+   background-color: #cfae19;
+   color: white;
+
+   border-radius: .75rem;
+
+   position: absolute;
+   right: -1rem;
+   bottom: 3.5rem;
+
+   box-shadow: 0 1rem 2rem rgba(28, 71, 122, 0.5);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   transition: background .5s;
+
+}
+.container.change .card-bottom .price{
+   background-color: #7952B3;
+}
+
+.price span{
+   font-size: 2rem;
+}
+.price span:first-child{
+   font-weight: 400;
+   text-transform: uppercase;
+   margin-right: .75rem;
+}
+.price span:last-child{
+   font-weight: bold;
+}
