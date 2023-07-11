@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+:root{
+    --color-100: #f1f5cc;
+    --color-300: #dfe262;
+    --color-500: #c9be29;
+
+    --long-needle: #5afc6e;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--color-500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-100);
+    font-family: 'Quicksand', sans-serif;;
+}
+
+.clock{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 5.5px solid var(--color-100);
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2),
+                -5px -5px 10px rgba(0, 0, 0, 0.2);
+}
+.twelve,
+.three,
+.six,
+.nine{
+    padding: 20px;
+    font-size: 2.5rem;
+    position: absolute;
+}
+.twelve{
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+.three{
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.six{
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nine{
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.center{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--color-300);
+
+    z-index: 3;
+}
+.needle{
+    width: 12px;
+    height: 220px;
+    background-color: var(--long-needle);
+    position: absolute;
+    border-radius: 50% 50% 0 0;
+    bottom: 50%;
+    transform-origin: center bottom;
+}
+#sec{
+    transform: rotate(30deg);
+    background-color: #ffa2aa;
+    z-index: 2;
+}
+#min{
+    height: 180px;
+    transform: rotate(60deg);
+   
+}
+#hour{
+    height:135px;
+}

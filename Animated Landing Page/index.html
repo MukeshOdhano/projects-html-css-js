@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Quicksand', 'sans-serif';
+        }
+        h1{
+            margin: 15px;
+            font-size: 4rem;
+            font-weight: 500;
+
+            animation-name: moveRight;
+            animation-duration: 2s;
+    
+        }
+        h1 span{
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        h2{
+            margin: 0 15px 15px 15px;
+            font-size: 2rem;
+
+            animation-name: moveLeft;
+            animation-duration: 2s;
+        }
+        .btns button{
+            text-transform: uppercase;
+            margin: 10px;
+            padding: 9px 20px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            outline-color: transparent;
+            border: 2px solid #282828;
+            transition: all .3s ease-in;
+            /* opacity: 0; */
+        }
+        .explorer{
+            color: #f5f5f5;
+            background-color: #282828;
+
+            animation-name: moveTop;
+            animation-duration: 1.5s;
+            animation-delay: 1.5s;
+            animation-fill-mode: backwards;
+
+        }
+        .sub{
+            animation-name: moveBottom;
+            animation-duration: 1.5s;
+            animation-delay: 1.8s;
+            animation-fill-mode: backwards;
+        }
+        .explorer:hover,
+        .sub:hover{
+            background-color: #e98b8b;
+            border-color: #e98b8b;
+            color: #f5f5f5;
+        }
+
+        @keyframes moveRight{
+            0%{
+                transform: translate(-50%);
+                opacity: 0;
+            } 100% {
+                transform: translate(0);
+                opacity: 1;
+            }
+        }
+        @keyframes moveLeft {
+            0%{
+                transform: translate(50%);
+                opacity: 0;
+            } 100% {
+                transform: translate(0);
+                opacity: 1;
+            }
+        }
+        @keyframes moveTop {
+            0%{
+                transform: translateY(-50%);
+                opacity: 0;
+            } 100%{
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes moveBottom{
+            0%{
+                transform: translateY(50%);
+                opacity: 0;
+            } 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="title">My <span>website</span></h1>
+        <h2>Created By Mukesh Odhano</h2>
+        
+        <div class="btns">
+            <button class="explorer">Explorer</button>
+            <button class="sub">Subscribe</button>
+        </div>
+    </main>
+</body>
+</html>
