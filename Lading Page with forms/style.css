@@ -59,12 +59,12 @@ nav .forms-btns{
     background-color: var(--secondary);
 }
 .container{
-    /* margin: 50px auto; */
+    margin: 100px auto;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 .forms-wraper{
     padding: 10px;
@@ -137,4 +137,34 @@ input::placeholder{
 }
 .forms-wraper button:hover{
     border-color: #d42a5b;
+}
+
+#login.active{
+    animation-name: moveLogin;
+    animation-duration: 1.5s;
+}
+#signup.active{
+    animation-name: moveSign;
+    animation-duration: 1.5s;
+}
+
+@keyframes moveLogin {
+    0%{
+        transform: translate(-25%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+@keyframes moveSign {
+    0%{
+        transform: translate(25%);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
 }
