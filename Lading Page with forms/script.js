@@ -24,8 +24,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     for(let i = 0; i < formWraper.length; i++){
         closeBtn[i].addEventListener("click", ()=>{
-            formWraper[i].classList.remove("active")0
-            
+            formWraper[i].classList.remove("active")
+
         })
     }
 })
