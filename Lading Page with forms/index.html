@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Landing Page</title>
+</head>
+<body>
+    <nav>
+
+        <h1>MK-O</h1>
+        <div class="forms-btns">
+            <button id="login-btn" class="btn">login</button>
+            <button id="sign-btn" class="btn">signup</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="login" class="forms-wraper">
+            <i class="cross fa-sharp fa-solid fa-xmark"></i>
+
+            <h1>Log-In</h1>
+            <form action="">
+                <div class="inputs-wraper">
+                    <i class="fa-sharp fa-solid fa-user"></i>
+                    <input type="text" placeholder="username">
+                </div>
+                <div class="inputs-wraper">
+                    <i class="fa-sharp fa-solid fa-key"></i>
+                    <input type="password" placeholder="password">
+                </div>
+            </form>
+            <button>login</button>
+        </div>
+        
+        <div id="signup" class="forms-wraper ">
+            <i class="cross fa-sharp fa-solid fa-xmark"></i>
+
+            <h1>Sign-up</h1>
+            <form action="">
+                <div class="inputs-wraper">
+                    <i class="fa-sharp fa-solid fa-user"></i>
+                    <input type="text" placeholder="name">
+                </div>
+                
+                <div class="inputs-wraper">
+                    <i class="fa-sharp fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="email">
+                </div>
+                
+                <div class="inputs-wraper">
+                    <i class="fa-sharp fa-solid fa-key"></i>
+                    <input type="password" placeholder="password">
+                </div>
+            </form>
+            <button>Sign-up</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
