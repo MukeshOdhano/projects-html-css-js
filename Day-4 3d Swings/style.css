@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
-:root{
+:root {
    --swing-color: #9feaab;
    --swing-color-bf: #87e798;
 
-   --circle-color: #1c5f28`;
+   --circle-color: #1c5f28;
 }
 
-*{
+* {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    font-family: Quicksand, sans-serif;
 }
-html{
+html {
    font-size: 62.5%;
 }
 
-.container{
+.container {
    width: 100%;
    height: 100vh;
    background-image: radial-gradient(
@@ -30,62 +30,221 @@ html{
    place-items: center;
 
    perspective: 150rem;
+   overflow: hidden;
 }
 
-.swing{
+.swing {
    width: 40rem;
    height: 20rem;
    background: var(--swing-color);
 
    transform: rotateX(70deg) rotateY(5deg) rotateZ(-40deg);
    transform-style: preserve-3d;
-}
-
-.swing::before{
-   content: "";
-   width: 1.5rem;
-   height: 100%;
-   background:var(--swing-color-bf);
    position: absolute;
-   transform: rotateY(90deg);
-   transform-origin: left;   
-}
-.swing::after{
-   content: "";
-   width: 100%;
-   height: 1.5rem;
-   background: var(--swing-color-bf);
-   position: absolute;
-   bottom: 0;
+   top: 50%;
+   transform-origin: top;
 
-   transform: rotateX(90deg);
-   transform-origin: bottom;
+   &::before {
+      content: "";
+      width: 1.5rem;
+      height: 100%;
+      background: var(--swing-color-bf);
+      transform: rotateY(90deg);
+      transform-origin: left;
+      position: absolute;
+   }
+   &::after {
+      content: "";
+      width: 100%;
+      height: 1.5rem;
+      background: var(--swing-color-bf);
+      position: absolute;
+      bottom: 0;
+
+      transform: rotateX(90deg);
+      transform-origin: bottom;
+   }
+
+   &.swing-1 {
+      animation: swinganime 20s infinite ease-in-out;
+   }
+   &.swing-2 {
+      animation: swinganime 20s infinite ease-in-out;
+      animation-delay: -4s;
+   }
+   &.swing-3 {
+      animation: swinganime 20s infinite ease-in-out;
+      animation-delay: -8s;
+   }
+   &.swing-4 {
+      animation: swinganime 20s infinite ease-in-out;
+      animation-delay: -12s;
+   }
+   &.swing-5 {
+      animation: swinganime 20s infinite ease-in-out;
+      animation-delay: -16s;
+   }
+}
+@keyframes swinganime {
+   0% {
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(100rem);
+   }
+   20% {
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(21rem);
+   }
+   25% {
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(27rem);
+   }
+   35%,
+   40% {
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(0);
+   }
+   50% {
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(-60rem);
+   }
+   55% {
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(-55rem);
+   }
+   65%,
+   70% {
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(-84rem);
+   }
+   100% {
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg)
+         translateY(-800rem);
+   }
 }
 
-.circle{
+.circle {
    width: 3rem;
    height: 3rem;
    background: var(--circle-color);
    border-radius: 50%;
-
    position: absolute;
-}
-.circle1{
-   top: 1rem;
-   left: 1rem;
+
+   /* to center sudo element &::before  */
+   display: grid;
+   place-items: center;
+
+   /* for 3d envoirment */
+   transform-style: preserve-3d;
+
+   &.circle1 {
+      top: 1rem;
+      left: 1rem;
+   }
+   &.circle2 {
+      top: 1rem;
+      right: 1rem;
+   }
+
+   &.circle3 {
+      bottom: 1rem;
+      left: 1rem;
+   }
+
+   &.circle4 {
+      bottom: 1rem;
+      right: 1rem;
+   }
+
+   &::before {
+      content: "";
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: aliceblue;
+      border-radius: 50%;
+      transform: translateZ(0.3rem);
+   }
 }
 
-.circle2{
-   top: 1rem;
-   right: 1rem;
+/* ROP */
+.rop {
+   height: 40rem;
+   width: 0.3rem;
+   background-color: azure;
+   position: absolute;
+   transform: translateZ(20rem) rotateX(90deg) rotateY(90deg);
+   transform-origin: top;
+   &.rop1 {
+      top: 10rem;
+      left: 2.5rem;
+   }
+   &.rop2 {
+      top: 10rem;
+      right: 2.5rem;
+   }
+
+   &::before {
+      content: "";
+      position: absolute;
+      height: 23rem;
+      width: 0.3rem;
+      background-color: red;
+
+      transform: translateY(-23rem) rotateZ(-21deg);
+      transform-origin: bottom;
+   }
+   &::after {
+      content: "";
+      position: absolute;
+      height: 23rem;
+      width: 0.3rem;
+      background-color: red;
+
+      transform: translateY(-23rem) rotateZ(21deg);
+      transform-origin: bottom;
+   }
 }
 
-.circle3{
-   bottom: 1rem;
-   left: 1rem;
+
+/* ball */
+.ball{
+   width: 7rem;
+   aspect-ratio: 1;
+   background: radial-gradient(rgba(159, 238, 156, 0.9), rgba(30, 110, 6, .8));
+   border-radius: 50%;
+
+   position: relative;
+   left: 15rem;
+   top: 10rem;
+   transform: rotateX(90deg) rotateY(40deg);
+   transform-origin: top;
+   box-shadow: 0 0 .3rem #333;
 }
 
-.circle4{
-   bottom: 1rem;
-   right: 1rem;
+.swing-6{
+   animation: swing6thAnime 4s infinite ease-in-out;
+   animation-delay: -1s;
+   background-color: transparent;
+
+   &::before,
+   &::after{
+      background-color: transparent;
+   }
+}
+.swing-6 div:not(.ball){
+   opacity: 0;
+
+   &::before,
+   &::after{
+      content: "";
+      opacity: 0;
+   }
+}
+
+
+@keyframes swing6thAnime {
+   0%{
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(0);
+
+   }
+   50%{
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(30rem);
+
+   }
+   100%{
+      transform: rotateX(70deg) rotateZ(-40deg) rotateY(5deg) translateY(0);
+
+   }
 }
